@@ -54,11 +54,15 @@ function insereUser (){
     if(validado){
         console.log('validado')
         //add to arrays
+
         nomeUsers.push(nome)
         mailUsers.push(email)
         senhaUsers.push(senha)
+
+
         
         geraUser();
+
         iteraUsers();
         console.log(usuarios)
     }else{
@@ -71,9 +75,12 @@ window.onload = iteraUsers;
 
 function iteraUsers(){
 
+    
     var nome = usuarios[0];
     var mail = usuarios[1];
     var senha = usuarios[2];
+
+    
 
     //console.log(nome[0]) - vinicius
 
@@ -106,14 +113,27 @@ function error(msg){
 
 
 function validaUser(name, mail, senha){
+
+    //validação dos campos
     if(name == "" || mail == "" || senha == "") {
-        setTimeout(error('Você deve preencher todos os campos'), 5000) 
+        error('Você deve preencher todos os campos');
         return false;
     }
     if(mail.indexOf('@') == -1){
         error('Preencha o email de forma correta');
         return false
     }
+
+    //verfica se usuário já existe
+    for(var i = 0; i < nomeUsers.length; i++){
+
+        if(name === nomeUsers[i] || mail === mailUsers[i]){
+            error('Usuário existente');
+            return false;
+        }
+    }
+
+
     return true
     
 
