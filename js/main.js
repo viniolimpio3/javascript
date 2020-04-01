@@ -43,7 +43,7 @@ var usuarios = [nomeUsers, mailUsers, senhaUsers];
 
 //insere, gera e itera usuarios
 function insereUser (){
-
+    
     //values dos elementos html
     var nome = nomeElement.value;
     var email = emailElement.value;
@@ -52,6 +52,7 @@ function insereUser (){
     var validado = validaUser(nome,email, senha);
 
     if(validado){
+        removeAll();
         console.log('validado')
         //add to arrays
 
@@ -85,7 +86,7 @@ function iteraUsers(){
     //console.log(nome[0]) - vinicius
 
     for(var i = 0; i < nomeUsers.length; i++ ){
-        var element = '<li class="list-group-item"> <div class="row linha"> <div class="col"> <p class="pcol">'+ nome[i] +'</p>  </div> <div class=" col"> <p class="pcol">'+ mail[i] +'</p> </div>  <div class=" col"> <p class="pcol">'+ senha[i] +'</p> </div> <div class="col text-center"> <button class="btn btn-danger"> <span class="fa fa-trash lixo "> </span> </button> </div> </div> </li>';
+        var element = '<div id="linha_'+i+'" > <li class="list-group-item"> <div class="row linha"> <div class="col"> <p class="pcol">'+ nome[i] +'</p>  </div> <div class=" col"> <p class="pcol">'+ mail[i] +'</p> </div>  <div class=" col"> <p class="pcol">'+ senha[i] +'</p> </div> <div class="col text-center"> <button id="btn_exclui_'+ i +'" onclick="removeUser('+i+')" class="btn btn-danger"> <span class="fa fa-trash lixo "> </span> </button> </div> </div> </li> </div>';
         $('#insereUser').append(element);
     }
 
@@ -139,6 +140,30 @@ function validaUser(name, mail, senha){
 
 }
 
+function removeAll(){
+    var lista = d('#insereUser')
+    lista.innerHTML = "";
+}
+
+function removeUser(id){
+    //remover da view
+    console.log("id " + id)
+    var idHtml = "linha_"+id;
+    console.log("removeu " + idHtml)
+    
+    var element = document.getElementById(idHtml);
+    element.innerHTML = ""
+
+    //remover do array
+    nomeUsers.splice(id,1);
+    mailUsers.splice(id,1);
+    senhaUsers.splice(id,1);
+    console.log(nomeUsers);
+
+    removeAll();
+    geraUser();
+    iteraUsers();
+}
 
 
 
