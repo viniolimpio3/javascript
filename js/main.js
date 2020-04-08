@@ -59,12 +59,15 @@ function insereUser (){
         nomeUsers.push(nome)
         mailUsers.push(email)
         senhaUsers.push(senha)
-
-
-        
+  
         geraUser();
 
         iteraUsers();
+        
+        nomeElement.value = "";
+        emailElement.value = "";
+        senhaElement.value = "";
+
         console.log(usuarios)
     }else{
         console.log('erro');
@@ -135,8 +138,7 @@ function validaUser(name, mail, senha){
     }
 
 
-    return true
-    
+    return true    
 
 }
 
@@ -158,8 +160,9 @@ function removeUser(id){
     nomeUsers.splice(id,1);
     mailUsers.splice(id,1);
     senhaUsers.splice(id,1);
-    console.log(nomeUsers);
-
+    //condicional ternária
+    nomeUsers.length == 0 ? console.log("lista vazia"):console.log(nomeUsers);
+    
     removeAll();
     geraUser();
     iteraUsers();
