@@ -8,21 +8,8 @@ var btnAdd = d('#main #add')
 var inputElement = d("#main #tarefa")
 var main = d('#main');
 
-var to_dos = [
-    {
-        id:1,
-        text:'Fazer café'
-        
-    },
-    {
-        id:2,
-        text:'Estudar Js'
-    },
-    {   
-        id:3,
-        text:'Estudar pro Enem'
-        
-    }
+var to_dos = JSON.parse(localStorage.getItem('listTodos')) || [
+    
 ]
 
 //events
@@ -30,7 +17,6 @@ btnAdd.onclick = addTo_do;
 
 function enter (e){
     var tecla = event.keyCode;
-    console.log("tecla "+tecla)
     if(tecla == 13) addTo_do()
 
 }
@@ -64,6 +50,7 @@ function addTo_do(){
         to_dos.push(newTo_do);
         inputElement.value = "";
         geraTo_dos();
+        saveToStorage();
         console.log(newTo_do);
     }else{
         erro('Preencha o Campo para Inserir um To-Do!');
@@ -149,6 +136,13 @@ function removeTo_do(idBtn){
     
     to_dos.splice(indexArray, 1);
     console.log(to_dos);
-    geraTo_dos()
+    geraTo_dos();
+    saveToStorage();
+
+}
+
+function saveToStorage(){
+
+    localStorage.setItem('listTodos', JSON.stringify(to_dos));
 
 }
