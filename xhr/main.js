@@ -31,8 +31,6 @@ axios.get('https://api.github.com/users/viniOlimpio')
 //         }
 //     })
 // }
-
-
 // minhaPromise()
 // .then(function (response){
 //     console.log(response.id);//posso colocar qualquer prop da resposta!!!! 
