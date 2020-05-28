@@ -1,0 +1,27 @@
+<html>
+<Head> <Title> Revisão Java Script!</Title>
+	<meta charset="utf-8">
+	</Head> 
+	<BODY>
+		<form name="form1">
+			Primeiro valor: 
+			<input type="text" name ="text1"><BR><p>
+
+			Segundo valor: 
+			<input type="text" name ="text2"><BR><p>
+
+			Clique aqui para calcular: 
+			<input type="button" value="Calcular" onclick="Calcular()">	
+	
+		<script type="text/javascript">
+			//Alterando valor de uma variavel  
+			function Calcular(){
+				var primeiroNum = eval (document.form1.text1.value);
+				var segundoNum = eval (document.form1.text2.value);
+				alert(primeiroNum + segundoNum);
+			}
+				
+			</script>
+	</form>
+	</BODY>
+</html>

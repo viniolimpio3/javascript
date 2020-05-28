@@ -9,6 +9,6 @@
     "@babel/preset-env": "^7.9.5"
   },
   "scripts": {
-    "dev": "babel ./src/main.js -o ./bundle.js -w "
+    "sync-class": "babel ./src/class.js -o ./bundle.js -w "
   }
 }

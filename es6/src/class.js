@@ -12,13 +12,17 @@ class toDo{
     }
 }
 
+
+
 class list extends toDo{
     procuraAtt(){
         console.log(this.data);
     }
 }
 
+//instância
 const objeto = new toDo();
+
 let inputElement = document.getElementById('txt');
 
 let btn = document.getElementById('btn');

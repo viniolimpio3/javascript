@@ -64,7 +64,8 @@ var list = /*#__PURE__*/function (_toDo) {
   }]);
 
   return list;
-}(toDo);
+}(toDo); //instância
+
 
 var objeto = new toDo();
 var inputElement = document.getElementById('txt');
