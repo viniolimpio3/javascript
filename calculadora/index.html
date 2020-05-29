@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body>
+        
+        <div class="container">
+            <input type="text" readonly id="view" name="view">
+            <table>
+                <tr>
+                    <td> <button type="button" onclick="input.clear()" class="btn"> C </button>  </td>
+                    <td> <button type="button" onclick="input.insert('<',false)" class="btn"> <span class="fa fa-arrow-left"></span> </button>  </td>
+                    <td> <button type="button" onclick="input.insert('*', false)" class="btn op"> X </button>  </td>
+                    <td> <button type="button" onclick="input.insert('/', false)" class="btn op"> / </button>  </td>
+                </tr>
+                <tr>
+                    <td> <button type="button" onclick="input.insert('9', false)" class="btn"> 9 </button>  </td>
+                    <td> <button type="button" onclick="input.insert('8', false)" class="btn"> 8 </button>  </td>
+                    <td> <button type="button" onclick="input.insert('7', false)" class="btn"> 7 </button>  </td>
+                    <td> <button type="button" onclick="input.insert('-', false)" class="btn op"> - </button>  </td>
+                </tr>
+                <tr>
+                    <td> <button type="button" onclick="input.insert('6', false)" class="btn"> 6 </button>  </td>
+                    <td> <button type="button" onclick="input.insert('5', false)" class="btn"> 5 </button>  </td>
+                    <td> <button type="button" onclick="input.insert('4', false)" class="btn"> 4 </button>  </td>
+                    <td> <button type="button" onclick="input.insert('+', false)" class="btn op"> + </button>  </td>
+                </tr>
+                <tr>
+                    <td> <button type="button" onclick="input.insert('3', false)" class="btn"> 3 </button>  </td>
+                    <td> <button type="button" onclick="input.insert('2', false)" class="btn"> 2 </button>  </td>
+                    <td> <button type="button" onclick="input.insert('1', false)" class="btn"> 1 </button>  </td>
+                    <td rowspan="2"> <button style="height: 128px;" type="button" onclick="input.insert('=', true)" class="btn op"> = </button>  </td>
+                </tr>
+                <tr>
+                    <td colspan="3"> <button style="width: 98%;" type="button" onclick="input.insert('0', false)" class="btn"> 0 </button>  </td>
+                </tr>
+
+
+
+            </table>    
+        </div>
+
+
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>
