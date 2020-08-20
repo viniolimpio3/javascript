@@ -8,7 +8,7 @@ class Input{
         if(!equal){
             let uD = this.input.value.substr(-1,1);//último dígito
             //se ultimo digito e t não forem sinais, passa
-            if(   !(  (uD == '+' || uD == '*' || uD == '-' || uD == '/') && (t == '+' || t == '-' || t =='*' || t =='/')  ) ){
+            if(   !((uD == '+' || uD == '*' || uD == '-' || uD == '/') && (t == '+' || t == '-' || t =='*' || t =='/')) ){
                 if(t !== '<') {
                     this.input.value += t;
                     console.log(this.input.value)
@@ -28,7 +28,6 @@ class Input{
         this.count = 0;
         this.input.value = '';
     }
-
 }
 
 const input = new Input();
@@ -37,28 +36,26 @@ const input = new Input();
 document.onkeypress = (e)=>{
     console.log(e.keyCode);
     let c = e.keyCode;
-    
-    if(c === 48) input.insert('0', false)
-    if(c === 49) input.insert('1', false)
-    if(c === 50) input.insert('2', false)
-    if(c === 51) input.insert('3', false)
-    if(c === 52) input.insert('4', false)
-    if(c === 53) input.insert('5', false)
-    if(c === 54) input.insert('6', false)
-    if(c === 55) input.insert('7', false)
-    if(c === 56) input.insert('8', false)
-    if(c === 57) input.insert('9', false)
 
-    if(c === 43 ) input.insert('+', false)
-    if(c === 45 ) input.insert('-', false)
-    if(c === 47 ) input.insert('/', false)
-    if(c === 42 ) input.insert('*', false)
-    if(c === 127) input.insert('<', false)
-    if(c === 99 ) input.clear();
+    (c === 48) ? input.insert('0', false):'';
+    (c === 49) ? input.insert('1', false):'';
+    (c === 50) ? input.insert('2', false):'';
+    (c === 51) ? input.insert('3', false):'';
+    (c === 52) ? input.insert('4', false):'';
+    (c === 53) ? input.insert('5', false):'';
+    (c === 54) ? input.insert('6', false):'';
+    (c === 55) ? input.insert('7', false):'';
+    (c === 56) ? input.insert('8', false):'';
+    (c === 57) ? input.insert('9', false):'';
 
-    if(c === 61 || c === 13) input.insert('=', true);
+    (c === 43 ) ? input.insert('+', false):'';
+    (c === 45 ) ? input.insert('-', false):'';
+    (c === 47 ) ? input.insert('/', false):'';
+    (c === 42 ) ? input.insert('*', false):'';
+    (c === 127) ? input.insert('<', false):'';
+    (c === 99 ) ? input.clear() : '';
 
-
+    (c === 61 ||  c === 13) ? input.insert('=', true) : '';
 }
 
 

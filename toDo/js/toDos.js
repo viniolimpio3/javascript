@@ -22,9 +22,7 @@ function enter (e){
 }
 
 window.onload = function(){
-
     geraTo_dos()
-
 }
 
 //Function To_dos
@@ -133,6 +131,7 @@ function removeTo_do(idBtn){
     //removendo do array
     var index = idBtn - 1;
     var indexArray = to_dos.findIndex(i => i.id == idBtn );
+
     
     to_dos.splice(indexArray, 1);
     console.log(to_dos);
@@ -142,7 +141,5 @@ function removeTo_do(idBtn){
 }
 
 function saveToStorage(){
-
     localStorage.setItem('listTodos', JSON.stringify(to_dos));
-
 }

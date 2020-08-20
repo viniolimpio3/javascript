@@ -1,0 +1,14 @@
+Tipos com o ES6
+- string
+- number
+- boolean
+- null
+- undefined - não definido - var existe, mas não existe valor
+- symbol 
+
+- Object 
+- Function - é um 'objeto chamado'
+- Array
+
+// verificar se variável possui valor
+// typeof myVar !=== undefined ? true : false;
